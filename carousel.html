@@ -1,15 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+    <style>
+        /* img{
+            display: none;
+        } */
+        .visible{
+            display: block;
+        }
+        .notVisible{
+            display: none;
+        }
+    </style>
+  </head>
+  <body>
     <div class="container">
-        <img src="" alt="">
-        <img src="" alt="">
-        <img src="" alt="">
+        <div class="image-1 visible">
+            <img src="https://static.thcdn.com/images/xlarge/webp/widgets/208-us/00/original-HP_40desk-095300.png" alt="" />
+        </div>
+        <div class="image-2 notVisible" >
+            <img src="https://static.thcdn.com/images/xlarge/webp/widgets/208-us/28/original-1920x700-020928.jpeg" alt="" />
+        </div>
+        <div class="image-3 notVisible">
+            <img src="https://static.thcdn.com/images/xlarge/webp/widgets/208-us/08/original-1920x700-085008.jpeg" alt="" />
+        </div>
+      <button class="prev"></button>
+      <button class="next"></button>
     </div>
-</body>
+    <script>
+        let image1=document.querySelector(".image-1")
+        let image2=document.querySelector(".image-2")
+        let image3=document.querySelector(".image-3")
+        let next=document.querySelector(".next")
+        let prev=document.querySelector(".prev")
+        next.onclick=i
+        rev=0
+        prev.onclick
+    </script>
+  </body>
 </html>

@@ -1,0 +1,140 @@
+.fullLine{
+    border-bottom: 0.8px solid black;
+}
+.footer{
+    display: flex;
+    gap: 5%;
+    margin: 0 3% 3% 3%;
+    padding-top: 2%;
+    width: 100%;
+    height: 65vh;
+}
+.footLeft{
+    width: 50%;
+}
+.customer{
+    margin-top: 3%;
+    /* border: 1px solid red; */
+}
+.signmeUp{
+    background-color: black;
+    color: white;
+    padding: 1.5% 5%;
+    border: none;
+    margin-bottom: 8%;
+}
+.customerServiceDet{
+    display: flex;
+    gap: 2%;
+}
+.customerServiceDet p{
+    padding-top: 1%;
+}
+.customerServiceDet i{
+    font-size: 150%;
+}
+.footRight{
+    width: 60%;
+    /* border: 2px solid salmon;
+    height: 300%; */
+}
+.social{
+    display: flex;
+    gap:2%;
+    width: 100%;
+    margin-bottom: 5.5%;
+    /* border: 2px solid green; */
+}
+.social a{
+    font-size: 200%;
+}
+.social a i{
+    border-radius: 50%;
+    /* border: 2px solid red; */
+    padding:10%;
+    color: gray;
+    background-color: lightgray;
+}
+/* .footLeft::after{
+    border-bottom: 2px solid black;
+} */
+.details{
+    display: flex;
+    /* gap: 2%; */
+    /* align-items: center; */
+    height: 90%;
+    width: 100%;
+    justify-content:space-between;
+}
+.business{
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    width: 30%;
+    /* border: 2px solid purple; */
+    margin-top: 2%;
+}
+.company{
+    margin-top: 1%;
+}
+.legal{
+    /* display: flex; */
+    margin-top: 1%;
+    width: 35%;
+    /* border: 2px solid purple; */
+    /* flex-direction: column;     */
+    /* height: 180%; */
+}
+.business p{
+    color: black;
+}
+.business a{
+    color: black;
+    width: 90%;
+    /* border: 2px solid yellow; */
+}
+.legal a{
+    width: 100%;
+}
+.business p:hover,.business a:hover{
+    background-color: lightgray;
+    text-decoration: none;
+    color: black;
+}
+.business a:hover{
+    cursor: pointer;
+}
+.fullLineAcc{
+    border-bottom: 0.8px solid black;
+    width: 80%;
+}
+.lastFooter{
+    /* margin: 1% 2%; */
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    /* border: 2px solid red; */
+}
+.thgCopyright{
+    width: 50%;
+}
+.pay{
+    margin-top: 2%;
+    width: 45%;
+    font-weight: bold;
+}
+.thgCopyright img{
+    width: 15%;
+}
+.thgCopyright_text{
+    color: gray;
+}
+.pay p{
+    font-size: 120%;
+    font-weight: bold;
+}
+.pay ul{
+    list-style-type: none;
+    display: flex;
+    flex-flow: wrap;
+}

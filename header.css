@@ -1,0 +1,260 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.heading{
+    margin-top: 0;
+    padding-top: 0;
+}
+.header {
+    position: relative;
+    padding-bottom: 1.5%;
+    position: fixed;
+    z-index: 10;
+    background-color: white;
+    /* margin: 0 1% 0 1%; */
+    border-bottom: 0.5px solid lightgray;
+}
+
+.head {
+    display: flex;
+    padding: 1.2%;
+    gap: 5%;
+}
+
+.head img {
+    width: 18%;
+    cursor: pointer;
+}
+
+.searchBar {
+    border: 1px solid gray;
+    margin: 1% 12% 0 8%;
+    width: 33%;
+    height: 6vh;
+    position: relative;
+}
+
+.searchBar input {
+    border: none;
+    width: 92%;
+    height: 85%;
+    padding-left: 1%;
+}
+.searchBar input::placeholder{
+    padding: 50% 0;
+}
+
+.searchBar input:focus {
+    outline: none;
+}
+
+.searchBar i {
+    width: 5%;
+    font-weight: bold;
+}
+.account{
+    width: 7.9%;
+    cursor: pointer;
+}
+
+.account,.cart {
+    margin: 1% 0;
+}
+.cart:hover{
+    cursor: pointer;
+}
+.account i {
+    font-size: 150%;
+}
+
+.accountHidden {
+    display: inline;
+    visibility: hidden;
+    position: absolute;
+    padding: 1%;
+    border: 0.5px solid black;
+    width: 23%;
+    z-index: 1;
+    background-color: white;
+    left: 65%;
+    top:45%;
+    height: 0;
+    color: white;
+}
+.account:hover .accountHidden{
+    background-color: white;
+    visibility: visible;
+    transition:.5s height;
+    width: 23%;
+    height: 300px;
+}
+.accountHidden a{
+    text-decoration: none;
+}
+.firstHidden {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 4%;
+    background-color: rgb(242, 242, 242);
+}
+
+.firstHidden a {
+    width: 100%;
+    text-align: center;
+    padding: 4%;
+}
+.firstHidden a:first-of-type:hover{
+    color:white
+}
+
+.accountHidden a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.firstHidden a:nth-child(2) {
+    color: black;
+}
+.secondHidden{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-break: 100px;
+}
+.secondHidden a {
+    color: black;
+    padding: 5% 1%;
+}
+
+.accountHidden div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.login {
+    background-color: black;
+    color: white;
+    margin-bottom: 4%;
+}
+
+.register {
+    border: 0.5px solid black;
+    text-decoration: none;
+}
+
+.cart i {
+    font-size: 150%;
+}
+
+
+#a {
+    text-decoration: none;
+    color: black;
+    /* padding-left: 0.1%; */
+    margin-left: 10px;
+}
+.categories{
+    margin-top: 1%;
+}
+
+.categories ul {
+    display: flex;
+    list-style-type: none;
+    gap: 2.2%;
+    margin-left: 1.3%;
+    font-size: 95%;
+    width: 100%;
+}
+.catUl li:hover{
+    cursor: pointer;
+}
+.allProducts{
+    display: grid;
+    padding-top: 8%;
+    grid-template-columns: repeat(3,1fr);
+}
+
+
+.navHiddenData{
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,150px);
+    grid-auto-rows: 250px;
+    grid-auto-columns: 150px;
+    width:98%;
+    padding: 3% 1% 0 1%;
+    gap: 3%;
+    top: 86%;
+    left: 0;
+    background-color: white;
+}
+
+.fullLine{
+    width: 100%;
+    border-bottom: 1px solid gray;
+    margin: 10% 0 5% 0;
+}
+.hoverData{
+    display: block;
+    width: 100%;
+}
+.hoverUl{
+    display: flex;
+    flex-direction: column;
+}
+
+.hoverUl li{
+    font-size: 100%;
+    list-style-type: none;
+    line-height: 1.5;
+}
+.hoverData li:hover,.hoverData p:hover{
+    cursor: pointer;
+}
+.hoverData p{
+    font-weight: bold;
+    font-size: 90%;
+    margin-bottom: 8%;
+}
+.brands{
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+    background-color: white;
+    width: 95%;
+}
+.brands ul{ 
+    display: flex;
+    list-style-type: none;
+    gap: 1%;
+    font-weight: bold;
+    font-size: 120%;
+    width: 100%;
+}
+.cat:hover>div{
+    display: grid;
+}
+.brandAToZItems{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    padding: 1% 3% 0 0;
+    gap: 40%;
+    line-height: 1.5;
+}
+.brandAToZItems li{
+    display: none;
+    font-size: 85%;
+    font-weight: 500;
+    margin: 0.2%;
+    width: 15%;
+}
+.brandAToZItems li:first-of-type{
+    display: flex;
+}

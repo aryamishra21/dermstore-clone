@@ -1,0 +1,170 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(242,242,242);
+}
+
+.header{
+    width: 100%;
+    height: 13vh;
+    /* border:2px solid green; */
+    background-color: white;
+    position:fixed;
+    top: 0;
+    /* box-shadow: 0 2px linear-gradient(gray, white); */
+}
+.header img{
+    width: 20%;
+    height: 75%;
+    padding-top:0.5%
+}
+.main{
+    margin: 10% 27% 4% 25%;
+    background-color: white;
+    padding: 2% 3% 2% 3%;
+}
+.about{
+    font-size: 150%;
+    margin-bottom: 7%;
+}
+.directSign{
+    margin-top: 5%;
+    display: flex;
+    gap: 3%;
+}
+.directSign a{
+    display: flex;
+    width: 100%;
+    gap: 3%;
+    border: 1px solid gray;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    padding:1% 2%;
+}
+.directSign a p{
+    font-weight: bold;
+    color:rgb(105, 96, 96);
+}
+.directSign a:hover{
+    border: none;
+}
+.line{
+    width: 100%;
+    border-bottom: 0.5px solid gray;
+    color: 1px solid rgb(231, 223, 223);
+    margin: 7% 0 2% 0;
+}
+.f{
+    display: flex;
+    flex-direction: column;
+}
+form{
+    margin-top: 6%;
+}
+label{
+    font-weight: bold;
+    padding-bottom: 1.5%;
+    font-size: 90%;
+}
+input{
+    padding: 2% 1%;
+    width: 100%;
+}
+.f{
+    margin-bottom: 5%;
+}
+.inp{
+    display: flex;
+    border:0.1px solid gray;
+    padding: 0 1%;
+    border-radius: 5px;
+}
+.inp input{
+    border: none;
+    margin:0;
+}
+.inp input:focus{
+    outline: none;
+}
+.inp a{
+    font-size: 90%;
+    padding-top: 2%;
+    font-weight: bold;
+}
+.cPassword,.password,.phone{
+    margin-bottom: 5%;
+}
+.phoneInput{
+    margin-bottom: 0;
+}
+.ref{
+    background-color: rgb(242,242,242);
+    padding: 2%;
+}
+
+form p:last-of-type{
+    font-weight: bold;
+}
+.rewards{
+    display: flex;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.rewards div p{
+    font-weight:400;
+}
+.rewards div a{
+    color: black;
+    font-weight: bold;
+}
+.rewards input{
+    width: 5%;
+}
+.submitBtn{
+    margin:5% 0;
+    width: 100%;
+    height: 7vh;
+    color: white;
+    background-color: black;
+    border: none;
+}
+.submitBtn:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+.afterSubmit a{
+    color: black;
+    font-weight: bold;
+    font-size: 90%;
+}
+.error{
+    display: none;
+    flex-direction: row;
+    gap: 2%;
+    color: rgb(196,44,33);
+    padding: 2% 2%;
+    margin-top: 0.5%;
+    background-color: rgb(250,232,230);
+}
+
+/* cmailInput.addEventListener('blur',function(){
+    console.log("blurred")
+    cmailInput.style.border="1px solid red"
+        console.log("checked")
+        if(mailInput.value!="" && mailInput.attributes["type"].value==="email" && mailInput.value!==cmailInput.value){
+            errorDataCEmail.style.display="flex"
+        }
+})
+
+let timeout;
+cmailInput.addEventListener('keyup',event=>{
+    clearTimeout(timeout);
+    timeout=setTimeout(() => {
+        console.log("sdsaq")
+    }, 1000);
+}) */

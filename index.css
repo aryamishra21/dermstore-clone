@@ -1,7 +1,57 @@
-.container{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+/* .navbar{
+    border: 2px solid red;
+} */
+
+body{
+    /* position: relative; */
+    width: 100%;
+    overflow-x: hidden;
+}
+
+
+.slideShow{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    /* margin-top: 5%; */
+    width: 100%;
+    transition: transform 0.3s;
+}
+.slideShow div{
+    /* border: 2px solid salmon; */
+    /* transform:translateX(100%); */
+    width:100%;
+}
+.slideShow div img{
+    width:fit-content;
+    height: 95vh;
+}
+.changeNext,.changePrev{
+    position: absolute;
+    top: 50%;
+    color: white;
+    background-color: lightgray;
+    border: none;
+    padding: 1% 1%;
+    border-radius: 10%;
+    width: 3%;
+    height: 8%;
+    /* border: 2px solid green; */
+}
+
+.changePrev{
+    left: 97%;
+}
+.container{
+    /* margin: 7%; */
+    /* padding: 0; */
+    /* box-sizing: border-box; */
+    box-sizing: content-box;
     border: 2px solid green;
     width: 100%;
     height: 100vh;
@@ -30,4 +80,345 @@ ol{
 }
 ol li{
     color: black;
+}
+
+.speciality{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2%;
+    gap:2%;
+    font-size: 110%;
+    position: relative;
+    /* border-bottom: 1px solid gray; */
+}
+.speciality::after{
+    position: absolute;
+    content:"";
+    border-bottom: 2px solid lightgray;
+    width: 23%;
+    top:100%;
+}
+.speciality a{
+    text-decoration: none;
+    color: black;
+}
+.speciality a:hover{
+    text-decoration: none;
+    color: black;
+}
+.markerSpec{
+    display: flex;
+    position: absolute;
+    width: 7.5%;
+    border-bottom: 3px solid black;
+    top: 100%;
+    z-index: 2;
+    transition: 0.5s;
+    left: 38%;
+}
+.bestSellers::-webkit-scrollbar {
+    display: none;
+}
+.activeBullet{
+    background-color: black;
+    outline: 1px solid blue;
+    outline-offset: 1px;
+}
+.nextToActiveBullet{
+    background-color: black;
+    outline: 1px solid black;
+    outline-offset: 1px;
+}
+.newArrivals::-webkit-scrollbar {
+    display: none;
+}
+.giftSets::-webkit-scrollbar {
+    display: none;
+}
+.virtueProducts::-webkit-scrollbar {
+    display: none;
+}
+.next,.prev{
+    color: white;
+    background-color: lightgray;
+    border: none;
+    padding: 1% 1%;
+    border-radius: 10%;
+    width: 3%;
+    height: 10%;
+}
+
+.typeLogo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10% 2%;
+}
+.typeLogo img{
+    width: 90%;
+}
+.virtue p:first-of-type{
+    width: 16%;
+    font-size: 150%;
+    font-weight: 600;
+    /* border: 2px solid gray; */
+    margin: auto;
+    padding: auto;
+}
+.virtue p:last-of-type{
+    width: 32%;
+    font-weight: 500;
+    margin: auto;
+    padding: auto;
+}
+.leftVirtueImg{
+    width: 40%;
+    height:75vh;
+}
+.virtueImgs{
+    display: flex;
+    width: 100%;
+    gap:1%;
+    margin:2%
+}
+.nextVirtue{
+    position: absolute;
+    width: 2.5%;
+    height: 6%;
+    background-color: lightgray;
+    border: none;
+    top: 49%;
+    left: 42%;
+}
+.nextVirtue i{
+    color: black;
+}
+.prevVirtue i{
+    color: black;
+}
+.prevVirtue{
+    position: absolute;
+    /* border: 2px solid yellow; */
+    width: 2.5%;
+    height: 6%;
+    background-color: lightgray;
+    border:none;
+    top: 49%;
+    right: 3%;
+}
+.supportStaff h3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3%;
+}
+.supportImgs{
+    display: flex;
+    /* gap: 2%; */
+}
+.supportImgs div{
+    width: 35%;
+    margin: 1% 2% ;
+}
+.supportImgs img{
+    width: 100%;
+}
+.supportImgs div p:first-of-type{
+    font-size: 130%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.supportImgs div p:last-of-type{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
+}
+.categories{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2%;
+}
+.line{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 3px solid lightgray;
+    width: 25%;
+    margin: 0 38%;
+}
+.categories button{
+    border: none;
+    font-size: 120%;
+}
+.categories button:hover{
+    border-bottom: 2px solid black;
+}
+.spotLightHead{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.spotPrLeft{
+    width: 40%;
+}
+.featuredBrands{
+    display: flex;
+    gap:3%;
+    justify-content: center;
+    align-items: center;
+}
+.featuredBrands img{
+    width: 13%;
+    height: 20vh;
+}
+
+.featuredBrands img:nth-child(2){
+    height: 4vh;
+    margin: 5% 0;
+
+}
+.fullLine{
+    border-bottom: 0.8px solid black;
+}
+.footer{
+    display: flex;
+    gap: 5%;
+    margin: 0 3% 3% 3%;
+    padding-top: 2%;
+    width: 100%;
+    height: 65vh;
+}
+.footLeft{
+    width: 50%;
+}
+.customer{
+    margin-top: 3%;
+    /* border: 1px solid red; */
+}
+.signmeUp{
+    background-color: black;
+    color: white;
+    padding: 1.5% 5%;
+    border: none;
+    margin-bottom: 8%;
+}
+.customerServiceDet{
+    display: flex;
+    gap: 2%;
+}
+.customerServiceDet p{
+    padding-top: 1%;
+}
+.customerServiceDet i{
+    font-size: 150%;
+}
+.footRight{
+    width: 60%;
+    /* border: 2px solid salmon;
+    height: 300%; */
+}
+.social{
+    display: flex;
+    gap:2%;
+    width: 100%;
+    margin-bottom: 5.5%;
+    /* border: 2px solid green; */
+}
+.social a{
+    font-size: 200%;
+}
+.social a i{
+    border-radius: 50%;
+    /* border: 2px solid red; */
+    padding:10%;
+    color: gray;
+    background-color: lightgray;
+}
+/* .footLeft::after{
+    border-bottom: 2px solid black;
+} */
+.details{
+    display: flex;
+    /* gap: 2%; */
+    /* align-items: center; */
+    height: 90%;
+    width: 100%;
+    justify-content:space-between;
+}
+.business{
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    width: 30%;
+    /* border: 2px solid purple; */
+    margin-top: 2%;
+}
+.company{
+    margin-top: 1%;
+}
+.legal{
+    /* display: flex; */
+    margin-top: 1%;
+    width: 35%;
+    /* border: 2px solid purple; */
+    /* flex-direction: column;     */
+    /* height: 180%; */
+}
+.business p{
+    color: black;
+}
+.business a{
+    color: black;
+    width: 90%;
+    /* border: 2px solid yellow; */
+}
+.legal a{
+    width: 100%;
+}
+.business p:hover,.business a:hover{
+    background-color: lightgray;
+    text-decoration: none;
+    color: black;
+}
+.business a:hover{
+    cursor: pointer;
+}
+.fullLineAcc{
+    border-bottom: 0.8px solid black;
+    width: 80%;
+}
+.lastFooter{
+    /* margin: 1% 2%; */
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    /* border: 2px solid red; */
+}
+.thgCopyright{
+    width: 50%;
+}
+.pay{
+    margin-top: 2%;
+    width: 45%;
+    font-weight: bold;
+}
+.thgCopyright img{
+    width: 15%;
+}
+.thgCopyright_text{
+    color: gray;
+}
+.pay p{
+    font-size: 120%;
+    font-weight: bold;
+}
+.pay ul{
+    list-style-type: none;
+    display: flex;
+    flex-flow: wrap;
 }

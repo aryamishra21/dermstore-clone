@@ -1,0 +1,180 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.logo{
+    width: 100%;
+    height: 12vh;
+    /* border:2px solid green; */
+    background-color: white;
+    position:fixed;
+    top: 0;
+    /* box-shadow: 0 2px linear-gradient(gray, white); */
+}
+.logo img{
+    width: 20%;
+    height: 84%;
+    padding-top:1%
+}
+.main{
+    display: flex;
+    gap: 3%;
+    background-color: rgb(242,242,242);
+    padding-top: 6%;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    width: 32%;
+    background-color: white;
+    margin: 4% 0 0 17%;
+    padding: 2.5%;
+    gap: 4%;
+}
+.right{
+    width: 30%;
+    background-color: white;
+}
+.existing{
+    font-size: 160%;
+    margin-bottom: 10%;
+}
+.mail,.pass{
+    display: flex;
+    flex-direction: column;
+    /* font-size: 90%; */
+    font-weight: bold;
+    gap: 5px;
+    margin-bottom: 10%;
+}
+input{
+    line-height: 3;
+    border: 0.1px solid gray;
+    border-radius: 3px;
+    font-size: 93%;
+    padding:0 4%;
+}
+label{
+    font-size: 95%;
+}
+.passI{
+    border: 0.1px solid gray;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.passInput{
+    border: none;
+    width: 80%;
+}
+.passInput:focus{
+    outline: none;
+}
+.show{
+    margin: 4% 3% 0 5%;
+    font-size: 90%;
+}
+.show:hover{
+    cursor: pointer;
+}
+.reset{
+    margin-top:5%;
+    color: black;
+    font-size: 95%;
+}
+.login{
+    width: 100%;
+    padding: 4% 4%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 90%;
+    font-weight: 400;
+    border: none;
+    margin: 7% 0 10% 0;
+}
+.login:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+.directSign{
+    margin-top: 7%;
+    display: flex;
+    gap: 3%;
+}
+.directSign a{
+    display: flex;
+    width: 100%;
+    gap: 4%;
+    border: 1px solid gray;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    padding:2% 4%;
+}
+.directSign a p{
+    font-weight: bold;
+    color:rgb(105, 96, 96);
+}
+.directSign a:hover{
+    border: none;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    width: 32%;
+    background-color: white;
+    margin: 4% 0 0 0;
+    padding: 2.5%;
+    /* gap: 4%; */
+    height: fit-content;
+}
+.right p{
+    font-size: 160%;
+    margin-bottom: 10%;
+}
+.register{
+    width: 100%;
+    padding: 4% 4%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 90%;
+    font-weight: 400;
+    border: none;
+    margin: 0 0 2% 0;
+    text-decoration: none;
+}
+.register:hover{
+    background-color: gray;
+}
+.error{
+    display: none;
+    flex-direction: row;
+    gap: 2%;
+    color: rgb(196,44,33);
+    background-color: rgb(250,232,230);
+    padding: 2% 2%;
+    font-size: 110%;
+    border-radius: 5px;
+}
+.error i{
+    font-size: 140%;
+}
+.error p{
+    padding-top: 1%;
+}
+.errorMain{
+    gap: 4%;
+    margin: 0 0 6% 0;
+    padding: 4% 0 5.2% 4%;
+}
+.errorMain p{
+    font-weight: 600;
+    font-size: 90%;
+    width: 70%;
+    margin-top: -1.5%;
+}
