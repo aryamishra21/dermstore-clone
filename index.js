@@ -1,8 +1,8 @@
 // let basket=JSON.parse(localStorage.getItem("data")) || []
-let calculation=()=>{
-    let cartAmount=document.getElementById("noInCart");
-    cartAmount.innerHTML=basket.map((x)=>x.quantity).reduce((x,y)=>x+y,0)
-}
+// let calculation=()=>{
+//     let cartAmount=document.getElementById("noInCart");
+//     cartAmount.innerHTML=basket.map((x)=>x.quantity).reduce((x,y)=>x+y,0)
+// }
 calculation()
 let slideShow=document.querySelector(".slideShow")
 slideShow.style.overflow="scroll"
