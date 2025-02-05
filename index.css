@@ -3,6 +3,60 @@
     padding: 0;
     box-sizing: border-box;
 }
+/*                     */
+a{
+    text-decoration: none;
+    color: black;
+}
+body{
+    width: 100%;
+    /* border: 1px solid blue; */
+}
+.testCarouselImg{
+    position: relative;
+    width: 100%;
+    height: 700px;
+    overflow: hidden;   
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:0; 
+    padding: 0;
+}
+.slide{
+    padding-top: 8%;
+    position: absolute;
+    width: 100%;
+    margin: auto;
+    transition: .6s;
+}
+.previousSlide,.nextSlide{
+    position: absolute;
+    top: 50%;
+    padding: 1.2%;
+    font-size: 120%;
+    color: white;
+    background-color: lightgray;
+    /* transition: 0.5sec; */
+    border: none;
+    /* z-index: 5; */
+}
+.previousSlide:hover,.nextSlide:hover{
+    background-color: black;
+    transition: background-color 0.6s ease;
+}
+.previousSlide{
+    left: 1px;
+    border-radius: 0 5px 5px 0;
+}
+.nextSlide{
+    right: 1px  ;
+    border-radius: 5px 0 0 5px ;
+}
+/*                       */
+
+
 /* .navbar{
     border: 2px solid red;
 } */
@@ -87,16 +141,19 @@ ol li{
     justify-content: center;
     align-items: center;
     padding-top: 2%;
-    gap:2%;
+    gap:10%;
     font-size: 110%;
     position: relative;
+    width: 25%;
+    margin: auto;
     /* border-bottom: 1px solid gray; */
+    /* border: 1px solid red; */
 }
 .speciality::after{
     position: absolute;
     content:"";
     border-bottom: 2px solid lightgray;
-    width: 23%;
+    width: 100%;
     top:100%;
 }
 .speciality a{
@@ -110,14 +167,17 @@ ol li{
 .markerSpec{
     display: flex;
     position: absolute;
-    width: 7.5%;
+    width: 30%;
     border-bottom: 3px solid black;
     top: 100%;
     z-index: 2;
     transition: 0.5s;
-    left: 38%;
+    left: 0%;
 }
 .bestSellers::-webkit-scrollbar {
+    display: none;
+}
+.leftData::-webkit-scrollbar {
     display: none;
 }
 .activeBullet{
@@ -140,6 +200,16 @@ ol li{
     display: none;
 }
 .next,.prev{
+    color: white;
+    background-color: lightgray;
+    border: none;
+    padding: 1% 1%;
+    border-radius: 10%;
+    width: 3%;
+    height: 10%;
+}
+.nextMobile,.prevMobile{
+    display: none;
     color: white;
     background-color: lightgray;
     border: none;
@@ -180,7 +250,7 @@ ol li{
     display: flex;
     width: 100%;
     gap:1%;
-    margin:2%
+    margin:2%;
 }
 .nextVirtue{
     position: absolute;
@@ -190,7 +260,11 @@ ol li{
     border: none;
     top: 49%;
     left: 42%;
+    border-radius:0 5px 5px 0;
 }
+/* .virtueProducts{
+    overflow:hidden;
+} */
 .nextVirtue i{
     color: black;
 }
@@ -206,6 +280,31 @@ ol li{
     border:none;
     top: 49%;
     right: 3%;
+    border-radius: 5px 0 0 5px;
+}
+.prevVirtueMobile{
+    display: none;
+    position: absolute;
+    /* border: 2px solid red; */
+    width: 10%;
+    height: 6%;
+    background-color: lightgray;
+    border:none;
+    top: 55%;
+    right: 0%;
+    border-radius: 5px 0 0 5px;
+}
+.nextVirtueMobile{
+    display: none;
+    position: absolute;
+    /* border: 2px solid red; */
+    width: 10%;
+    height: 6%;
+    background-color: lightgray;
+    border:none;
+    top: 55%;
+    left: 0%;
+    border-radius: 5px 0 0 5px;
 }
 .supportStaff h3{
     display: flex;
@@ -282,143 +381,395 @@ ol li{
     margin: 5% 0;
 
 }
+.sponsored{
+    border: 1px solid gray;
+    margin-top: 5% 0 0 0;
+    width: 100%;
+    display: flex;
+    height: 80%;
+    flex-direction: row;
+}
+.sponsoredRight{
+    width: 45%;
+}
+.sponsoredRight img{
+    width: 100%;
+    height: 100%;
+}
+.sponsoredLeft{
+    width: 60%;
+    /* border: 1px solid green; */
+}
+.leftData{
+    width:100%;
+    height: 80%;
+    display: flex;
+    overflow: hidden;
+    gap: 60px;
+    /* position: relative; */
+}
+.sponsoredProduct{
+    width: 400px;
+    display: flex;
+    height: 100%;
+    /* position: absolute; */
+    transition: 0.5s;
+}
+.sponsoredButtons{
+    height: 10%;
+}
+.sponsoredProductImg{
+    padding: 10% 2% 5% 2%;
+    width: 170px;
+    height: 100%;
+}
+.sponsoredProductDesc{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10%;
+    width: 200px;
+    padding: 10% 3% 5% 3%;
+    font-size: 95%;
+    height: 100%;
+    /* border: 1px solid pink; */
+}
+/* .dataBest{
+    height: 40%;
+} */
 .fullLine{
     border-bottom: 0.8px solid black;
 }
-.footer{
-    display: flex;
-    gap: 5%;
-    margin: 0 3% 3% 3%;
-    padding-top: 2%;
-    width: 100%;
-    height: 65vh;
+
+@media only screen and (min-width: 481px){
+    .speciality{
+        width: 100%;
+        display: flex;
+        margin: 0;
+        align-items: center;
+        justify-content: center
+        !important
+    }
+    .spec1,.spec2,.spec3{
+        width: 33%;
+        text-align: center;
+    }
+    .markerSpec{
+        width: 33%
+    }
 }
-.footLeft{
-    width: 50%;
+@media only screen and (min-width: 900px) and (max-width:1024px){
+    .best{
+        width: 45%;
+        height: 55vh
+        !important
+    }
 }
-.customer{
-    margin-top: 3%;
-    /* border: 1px solid red; */
+@media only screen and (min-width: 1025px) and (max-width:1200px){
+    .speciality{
+        width: 100%;
+        display: flex;
+        margin: 0;
+        align-items: center;
+        justify-content: center
+        !important
+    }
+    .spec1,.spec2,.spec3{
+        width: 33%;
+        text-align: center;
+    }
+    .markerSpec{
+        width: 33%
+    }
 }
-.signmeUp{
-    background-color: black;
-    color: white;
-    padding: 1.5% 5%;
-    border: none;
-    margin-bottom: 8%;
+@media only screen and (min-width: 1201px){
+    .best{
+        width: 45%;
+        height: 80vh
+        !important
+    }
+    .speciality{
+        width: 100%;
+        display: flex;
+        margin: 0;
+        align-items: center;
+        justify-content: center
+        !important
+    }
+    .spec1,.spec2,.spec3{
+        width: 33%;
+        text-align: center;
+    }
+    .markerSpec{
+        width: 33%
+    }
 }
-.customerServiceDet{
-    display: flex;
-    gap: 2%;
+@media only screen and (max-width: 899px){
+    .best{
+        width: 40%;
+        height: 50vh
+        !important
+    }
 }
-.customerServiceDet p{
-    padding-top: 1%;
+@media only screen and (min-width: 480px) and (max-width:768px){
+    /* .best{
+        width: 100%;
+        height: 60vh
+        !important
+    }   
+    .best img{
+        width: 60%;
+    } */
+    .prev{
+        width: 8%;
+    }
+    .next{
+        width: 8%; 
+    }
+    .virtue p{
+        width: 100%
+        !important;
+        text-align: center
+        !important;
+    }
+    .virtueImgs{
+        flex-direction: column;
+        width: 100%
+        !important;
+        /* margin-left: 4%
+        !important; */
+        align-items: center;
+    }
+    .virtueImgs>img{
+        width: 70%
+        !important;
+        padding: 0
+        !important;
+        height:70vh
+    }
+    .virtueProducts{
+        width: 90%
+        !important;
+        overflow:hidden
+        !important;
+    }
+    .prevVirtue,.nextVirtue{
+        display: none;
+    }
+    .prevVirtueMobile,.nextVirtueMobile{
+        display: block;
+    }
 }
-.customerServiceDet i{
-    font-size: 150%;
+@media only screen and (min-width: 320px) and (max-width:899px){
+    .best{
+        width: 100%
+        !important;
+        height: 90vh
+        !important  
+    }
+    .newArrivals{
+        width: 100%
+        !important;
+        height: 90vh
+        !important  
+    }
+    .giftSets{
+        width: 100%
+        !important;
+        height: 90vh
+        !important  
+    }
+    .testCarouselImg{
+        height: 300px;
+    }
+    .speciality{
+        width: 100%;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .spec1,.spec2,.spec3{
+        width: 30%;
+    }
+    .markerSpec{
+        width: 30%
+    }
+    .featuredBrands{
+        width: 100%;
+        gap: 5%;
+        row-gap:20px;
+        flex-wrap: wrap
+        !important;
+        margin-bottom: 50px;
+    }
+    .featuredBrands img{
+        width: 25%
+        !important;
+        height: 40%;
+    }
+    .social a{
+        width: 24%;
+    }
+    .virtue p{
+        width: 100%
+        !important;
+        text-align: center
+        !important;
+    }
+    .sponsoredLeft p{
+        left: 80%
+        !important
+    }
+    /* .virtueImgs>img{
+        width: 100%
+        !important;
+        padding: 0
+        !important;
+        height:0vh
+    } */
+    .sponsoredProductImg{
+        width: 170px;
+    }
+    .sponsoredProductDesc{
+        height: 40vh;
+        gap: 0%;
+        padding:15% 2% 0 2%
+        !important;
+        width: 150px
+        !important
+    }
 }
-.footRight{
-    width: 60%;
-    /* border: 2px solid salmon;
-    height: 300%; */
+@media only screen and (min-width: 769px) and (max-width:899px){
+    .virtueImgs>img{
+        width: 45%
+        !important;
+        padding: 0
+        !important;
+        height:55vh
+    }
+    .prevVirtue,.nextVirtue{
+        display: none;
+    }
+    .prevVirtueMobile{
+        display: block;
+        left:45%;
+        width: 6%;
+    }
+    .nextVirtueMobile{
+        display: block;
+        left:93%;
+        width: 6%;
+    }
 }
-.social{
-    display: flex;
-    gap:2%;
-    width: 100%;
-    margin-bottom: 5.5%;
-    /* border: 2px solid green; */
-}
-.social a{
-    font-size: 200%;
-}
-.social a i{
-    border-radius: 50%;
-    /* border: 2px solid red; */
-    padding:10%;
-    color: gray;
-    background-color: lightgray;
-}
-/* .footLeft::after{
-    border-bottom: 2px solid black;
-} */
-.details{
-    display: flex;
-    /* gap: 2%; */
-    /* align-items: center; */
-    height: 90%;
-    width: 100%;
-    justify-content:space-between;
-}
-.business{
-    display: flex;
-    flex-direction: column;
-    gap: 5%;
-    width: 30%;
-    /* border: 2px solid purple; */
-    margin-top: 2%;
-}
-.company{
-    margin-top: 1%;
-}
-.legal{
-    /* display: flex; */
-    margin-top: 1%;
-    width: 35%;
-    /* border: 2px solid purple; */
-    /* flex-direction: column;     */
-    /* height: 180%; */
-}
-.business p{
-    color: black;
-}
-.business a{
-    color: black;
-    width: 90%;
-    /* border: 2px solid yellow; */
-}
-.legal a{
-    width: 100%;
-}
-.business p:hover,.business a:hover{
-    background-color: lightgray;
-    text-decoration: none;
-    color: black;
-}
-.business a:hover{
-    cursor: pointer;
-}
-.fullLineAcc{
-    border-bottom: 0.8px solid black;
-    width: 80%;
-}
-.lastFooter{
-    /* margin: 1% 2%; */
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    /* border: 2px solid red; */
-}
-.thgCopyright{
-    width: 50%;
-}
-.pay{
-    margin-top: 2%;
-    width: 45%;
-    font-weight: bold;
-}
-.thgCopyright img{
-    width: 15%;
-}
-.thgCopyright_text{
-    color: gray;
-}
-.pay p{
-    font-size: 120%;
-    font-weight: bold;
-}
-.pay ul{
-    list-style-type: none;
-    display: flex;
-    flex-flow: wrap;
+@media only screen and (min-width: 320px) and (max-width:480px){
+    .best{
+        width: 100%
+        !important;
+        height: 90vh
+        !important  
+    }
+    .newArrivals{
+        width: 100%
+        !important;
+        height: 90vh
+        !important  
+    }
+    .giftSets{
+        width: 100%
+        !important;
+        height: 90vh
+        !important  
+    }
+    .arrival{
+        width: 100%;
+        height: 70vh
+        !important
+    }
+    .typeLogo{
+        flex-direction: column;
+    }
+    .featuredBrands img{
+        width: 25%
+        !important
+    }
+    .virtue p{
+        width: 100%
+        !important;
+        text-align: center
+        !important;
+    }
+    .virtueImgs{
+        flex-direction: column;
+        width: 100%
+        !important;
+        /* margin-left: 4%
+        !important; */
+        align-items: center;
+    }
+    .virtueImgs>img{
+        width: 100%
+        !important;
+        padding: 0
+        !important;
+        height:50vh
+    }
+    .virtueProducts{
+        width: 90%
+        !important;
+        overflow:hidden
+        !important;
+    }
+    .prev,.next{
+        display: none;
+    }
+    .prevMobile,.nextMobile{
+        display: block;
+        width: 8%;
+    }
+    .spotPrLeft img{
+        width: 100%;
+    }
+    .prevVirtue,.nextVirtue{
+        display: none;
+    }
+    .prevVirtueMobile,.nextVirtueMobile{
+        display: block;
+    }
+    .supportImgs{
+        flex-direction: column;
+    }
+    .supportImgs div{
+        width: 100%;
+        padding: 0 2%;
+    }
+    .sponsored{
+        flex-direction: column;
+    }
+    .sponsored div{
+        width: 100%;
+    }
+    .sponsoredLeft p{
+        left: 80%
+        !important
+    }
+    .sponsoredProduct{
+        width: 400px
+        !important
+    }
+    .sponsoredProductImg{
+        width: 190px;
+    }
+    .sponsoredProductDesc{
+        height: 40vh;
+        gap: 0%;
+        padding:15% 2% 0 2%
+        !important;
+        width: 150px
+        !important
+    }
+    .sponsoredProductDesc p{
+        font-size: 100%
+        !important
+    }
 }

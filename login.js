@@ -171,7 +171,7 @@ function getAllDetails(e){
                 loginStatus=true;
                 console.log(loginStatus)
                 checkUser=val.Email
-                window.location.href="http://127.0.0.1:5500/index.html";
+                window.location.href="/index.html";
                 
                 // check=true
                 // return check

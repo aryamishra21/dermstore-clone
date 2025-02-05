@@ -117,6 +117,6 @@ let totalAmount=()=>{
 totalAmount();
 
 openProduct=(id)=>{
-    window.location.href=`http://127.0.0.1:5500/random.html?${id}`
+    window.location.href=`/random.html?${id}`
     totalProducts.map((x)=>x.id===id)
 }

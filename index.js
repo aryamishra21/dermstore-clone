@@ -3,21 +3,106 @@
 //     let cartAmount=document.getElementById("noInCart");
 //     cartAmount.innerHTML=basket.map((x)=>x.quantity).reduce((x,y)=>x+y,0)
 // }
-calculation()
-let slideShow=document.querySelector(".slideShow")
-slideShow.style.overflow="scroll"
-// slideShow.style.border="2px solid red"
-let changeNext=document.querySelector(".changeNext")
-changeNext.onclick=()=>{
-    console.log("next")
-    slideShow.scrollBy({left:-1320,behavior:"smooth"})
-}
 
-let changePrev=document.querySelector(".changePrev")
-changePrev.onclick=()=>{
-    console.log("prev")
-    slideShow.scrollBy({left:1320,behavior:"smooth"})
+// calculation()
+
+
+
+let leftData=document.querySelector(".leftData")
+// let leftDataInner=document.querySelector(".leftDataInner")
+// leftDataInner.style.display="flex"
+let sponsoredPr=document.querySelector(leftData.firstElementChild)
+let sponsoredProduct=document.querySelector(".sponsoredProduct")
+// sponsoredPr.setAttribute('class',)
+// first slider
+
+        var counter=0;
+        let slides=document.querySelectorAll(".slide");
+        slides.forEach(
+            (slide,index)=>slide.style.left=`${index*100}%`
+        )
+        goPrev=()=>{
+            if(counter<=0){
+                counter=2
+            }
+            else{
+                counter--;
+            }
+            slideImage()
+        }
+        goNext=()=>{
+            if(counter>=2){
+                counter=0
+            }
+            else{
+                counter++;
+            }
+            slideImage()
+        }
+        const slideImage=()=>{
+            slides.forEach(
+                (slide)=>
+                    slide.style.transform=`translateX(-${counter*100}%)`    
+            )
+        }
+
+        // first slider
+
+// var changeSp=0;
+// let sponsoredProducts=document.querySelectorAll(".sponsoredProduct");
+// console.log(sponsoredProducts)
+// sponsoredProducts.forEach(
+//     (slide,index)=>slide.style.left=`${index*100}%`
+// )
+sponsoredPrev=()=>{
+    leftData.scrollBy({left:-400,behavior:"smooth"})
+    console.log("inprev")
+    // leftData.style.border="5px solid olive"
+    // if(changeSp<=0){
+    //     changeSp=4
+    // }
+    // else{
+    //     changeSp--;
+    // }
+    // slideSponsor()
 }
+sponsoredNext=()=>{
+    leftData.scrollBy({left:400,behavior:"smooth"})
+    console.log("innext")
+    // leftData.style.border="5px solid red"
+    // if(changeSp>=4){
+    //     changeSp=0
+    // }
+    // else{
+    //     changeSp++;
+    // }
+    // slideSponsor()
+}
+// const slideSponsor=()=>{
+//     leftData.scrollBy({left:-100,behavior:"smooth"})
+//     console.log("here");
+//     sponsoredProducts.forEach(
+//         (slide)=>
+//         slide.style.transform=`translateX(-${changeSp*100}%)`    
+//         )
+// }
+
+
+
+// let slideShow=document.querySelector(".slideShow")
+// slideShow.style.overflow="scroll"
+// // slideShow.style.border="2px solid red"
+// let changeNext=document.querySelector(".changeNext")
+// changeNext.onclick=()=>{
+//     console.log("next")
+//     slideShow.scrollBy({left:-1320,behavior:"smooth"})
+// }
+
+// let changePrev=document.querySelector(".changePrev")
+// changePrev.onclick=()=>{
+//     console.log("prev")
+//     slideShow.scrollBy({left:1320,behavior:"smooth"})
+// }
 
 
 //bestSellers
@@ -174,15 +259,18 @@ let bestSellersArr=[
 ]
 // export default bestSellersArr
 
-let dat=[];
+// let dat=[];
 
 
 
 let bestSellers=document.querySelector(".bestSellers")
 // bestSellers.style.border="2px solid red"
 bestSellers.style.height="100%"
-bestSellers.style.overflow="scroll"
+// bestSellers.style.width="90%"
+// bestSellers.style.overflow="hidden"
+bestSellers.style.overflow="hidden"
 bestSellers.style.padding="0% 2%"
+bestSellers.style.width="98%"
 // bestSellers.style.scrollBar="hidden"
 count=0
 // console.log(bestSellersArr.length)
@@ -196,6 +284,7 @@ let bestSeller=bestSellersArr.map(function dataBestSeller(val){
     bestSellerProduct.style.height="80vh"
     // bestSellerProduct.style.border="2px solid green"
     bestSellerProduct.classList.add("best-"+count)
+    bestSellerProduct.classList.add("best")
     // bestSellerProduct.classList.add("best")
     bestSellers.style.display="flex"
     bestSellers.style.gap="1%"
@@ -239,6 +328,7 @@ let bestSeller=bestSellersArr.map(function dataBestSeller(val){
     dataBest.appendChild(quickBuy)
     headingBest.style.display="flex"
     dataBest.style.height="40%"
+    dataBest.classList.add("dataBest")
     quickBuy.style.alignSelf="flex-end"
     quickBuy.innerHTML="QUICK BUY"
     quickBuy.style.width="100%"
@@ -274,7 +364,7 @@ let bestSeller=bestSellersArr.map(function dataBestSeller(val){
     price.innerHTML=val.price
     price.style.fontWeight="bold"
     let a=bestSellerProduct.classList
-    console.log(bestSellerProduct.classList.value.split("-")[1])
+    // console.log(bestSellerProduct.classList.value.split("-")[1])
 
     let li=document.createElement("li")
     let bulletBtn=document.createElement("button")
@@ -330,26 +420,48 @@ let bestSeller=bestSellersArr.map(function dataBestSeller(val){
     }
     bulletBtn.classList.remove("activeBullet")
 //scroll buttons
-    let prev= document.querySelector(".prev")
-    prev.onclick=function showPrev(){
-        bestSellers.scrollBy({left:-1200,behavior:"smooth"})
-    }
-    let next= document.querySelector(".next")
-    next.onclick=function showNext(){
-        bestSellers.scrollBy({left:1200,behavior:"smooth"})
-    }
-    prev.onmouseover=()=>{
-        prev.style.backgroundColor="black"
-    }
-    prev.onmouseout=()=>{
-        prev.style.backgroundColor="gray"
-    }
-    next.onmouseover=()=>{
-        next.style.backgroundColor="black"
-    }
-    next.onmouseout=()=>{
-        next.style.backgroundColor="gray"
-    }
+    // let prev= document.querySelector(".prev")
+    // prev.onclick=function showPrev(){
+    //     bestSellers.scrollBy({left:-1200,behavior:"smooth"})
+    // }
+    // let next= document.querySelector(".next")
+    // next.onclick=function showNext(){
+    //     bestSellers.scrollBy({left:1200,behavior:"smooth"})
+    // }
+    // prev.onmouseover=()=>{
+    //     prev.style.backgroundColor="black"
+    // }
+    // prev.onmouseout=()=>{
+    //     prev.style.backgroundColor="gray"
+    // }
+    // next.onmouseover=()=>{
+    //     next.style.backgroundColor="black"
+    // }
+    // next.onmouseout=()=>{
+    //     next.style.backgroundColor="gray"
+    // }
+    
+
+    // let prevMobile= document.querySelector(".prevMobile")
+    // let nextMobile= document.querySelector(".nextMobile")
+    // prevMobile.onclick=function showPrev(){
+    //     bestSellers.scrollBy({left:-250,behavior:"smooth"})
+    // }
+    // nextMobile.onclick=function showNext(){
+    //     bestSellers.scrollBy({left:250,behavior:"smooth"})
+    // }
+    // prevMobile.onmouseover=()=>{
+    //     prevMobile.style.backgroundColor="black"
+    // }
+    // prevMobile.onmouseout=()=>{
+    //     prevMobile.style.backgroundColor="gray"
+    // }
+    // nextMobile.onmouseover=()=>{
+    //     nextMobile.style.backgroundColor="black"
+    // }
+    // nextMobile.onmouseout=()=>{
+    //     nextMobile.style.backgroundColor="gray"
+    // }
     // let li=document.createElement("li")
     // let slideBullet=document.createElement("button")
     // ul.appendChild(li)
@@ -365,11 +477,11 @@ let bestSeller=bestSellersArr.map(function dataBestSeller(val){
         console.log(bestSellersArr[val.id])
         // dat.push(bestSellersArr[val.id])
         // window.history.pushState()
-        window.location.href=`http://127.0.0.1:5500/random.html?${val.id}`
+        window.location.href=`/random.html?${val.id}`
 
     }
 })
-console.log("dat",dat)
+// console.log("dat",dat)
 // function storeIt(){
 //     return `${dat}`
 // }
@@ -523,13 +635,15 @@ let newArrivals=document.querySelector(".newArrivals")
 newArrivals.style.display="none"
 // newArrivals.style.border="2px solid red"
 newArrivals.style.flexDirection="row"
-newArrivals.style.overflow="scroll"
+newArrivals.style.overflow="hidden"
 newArrivals.style.padding="0% 2%"
 
 let newArrival=newArrivalsArr.map(function(val){
     let newArrivalMain=document.createElement("div")
     let newArrivalImg=document.createElement("img")
+    newArrivalImg.style.height="50%"
     let newArrivalData=document.createElement("div")
+    newArrivalData.style.height="40%"
     let newArrivalDesc=document.createElement("div")
     let newArrivalTitle=document.createElement("p")
     let newArrivalButton=document.createElement("button")
@@ -540,6 +654,9 @@ let newArrival=newArrivalsArr.map(function(val){
     newArrivalMain.appendChild(newArrivalImg)
     newArrivalMain.appendChild(newArrivalData)
     newArrivalMain.classList.add("arrival-"+count)
+    newArrivalData.classList.add("newArrivalData")
+    newArrivalData.style.display="flex"
+    newArrivalData.style.justifyContent="space-between"
     newArrivalData.appendChild(newArrivalDesc)
     newArrivalData.appendChild(quickBuy)
 
@@ -588,8 +705,35 @@ let newArrival=newArrivalsArr.map(function(val){
     next.onmouseout=()=>{
         next.style.backgroundColor="lightgray"
     }
+
+
+
+    let prevMobile= document.querySelector(".prevMobile")
+    let nextMobile= document.querySelector(".nextMobile")
+    prevMobile.onclick=function showPrev(){
+        bestSellers.scrollBy({left:-250,behavior:"smooth"})
+        newArrivals.scrollBy({left:-250,behavior:"smooth"})
+        giftSets.scrollBy({left:-250,behavior:"smooth"})
+    }
+    nextMobile.onclick=function showNext(){
+        bestSellers.scrollBy({left:250,behavior:"smooth"})
+        newArrivals.scrollBy({left:250,behavior:"smooth"})
+        giftSets.scrollBy({left:250,behavior:"smooth"})
+    }
+    prevMobile.onmouseover=()=>{
+        prevMobile.style.backgroundColor="black"
+    }
+    prevMobile.onmouseout=()=>{
+        prevMobile.style.backgroundColor="gray"
+    }
+    nextMobile.onmouseover=()=>{
+        nextMobile.style.backgroundColor="black"
+    }
+    nextMobile.onmouseout=()=>{
+        nextMobile.style.backgroundColor="gray"
+    }
     // newArrivals.style.width="100%"
-    newArrivalMain.style.width="100%"
+    newArrivalMain.style.width="98%"
     newArrivalMain.style.height="80vh"
     newArrivalMain.style.display="flex"
     // newArrivalData.style.border="5px solid green"
@@ -631,7 +775,7 @@ let newArrival=newArrivalsArr.map(function(val){
         quickBuy.style.backgroundColor="black"
     }
     newArrivalMain.onclick=(e)=>{
-        window.location.href=`http://127.0.0.1:5500/product.html?${val.id}`
+        window.location.href=`/product.html?${val.id}`
     }
 })
 
@@ -642,8 +786,9 @@ let newArrival=newArrivalsArr.map(function(val){
 let giftSets=document.querySelector(".giftSets")
 giftSets.style.display="none"
 giftSets.style.flexDirection="row"
-giftSets.style.overflow="scroll"
+giftSets.style.overflow="hidden"
 giftSets.style.padding="0% 2%"
+giftSets.style.width="98%"
 let giftSetsArr=[
     {
         image:"https://static.thcdn.com/images/small/webp//productimg/original/14219177-1695019790206864.jpg",
@@ -776,7 +921,9 @@ let giftSetsArr=[
 let giftSet=giftSetsArr.map(function(val){
         let newArrivalMain=document.createElement("div")
         let newArrivalImg=document.createElement("img")
+        newArrivalImg.style.height="50%"
         let newArrivalData=document.createElement("div")
+        newArrivalData.style.height="40%"
         let newArrivalDesc=document.createElement("div")
         let newArrivalTitle=document.createElement("p")
         let newArrivalButton=document.createElement("button")
@@ -787,6 +934,10 @@ let giftSet=giftSetsArr.map(function(val){
         newArrivalMain.appendChild(newArrivalImg)
         newArrivalMain.appendChild(newArrivalData)
         newArrivalMain.classList.add("arrival-"+count)
+        newArrivalData.classList.add("giftSet")
+        newArrivalData.style.display="flex"
+        newArrivalData.style.justifyContent="space-between"
+
         newArrivalData.appendChild(newArrivalDesc)
         newArrivalData.appendChild(quickBuy)
     
@@ -854,7 +1005,7 @@ let giftSet=giftSetsArr.map(function(val){
             quickBuy.style.backgroundColor="black"
         }
         newArrivalMain.onclick=()=>{
-            window.location.href=`http://127.0.0.1:5500/product.html?${val.id}`
+            window.location.href=`/product.html?${val.id}`
         }
 })
 
@@ -911,7 +1062,7 @@ let virtueArr=[
 virtueProducts=document.querySelector(".virtueProducts")
 virtueProducts.style.width="52%"
 virtueProducts.style.height="100vh"
-virtueProducts.style.overflow="scroll"
+virtueProducts.style.overflow="hidden"
 // virtueProducts.style.border="2px solid red"
 virtueProducts.style.display="flex"
 virtueProducts.style.gap="50px"
@@ -993,13 +1144,22 @@ let virtuePr=virtueArr.map(function showVirtue(e){
     // console.log(quickBuy)
 
     let prevVirtue= document.querySelector(".prevVirtue")
+    let prevVirtueMobile= document.querySelector(".prevVirtueMobile")
+    let nextVirtueMobile= document.querySelector(".nextVirtueMobile")
+    // let unit = prevVirtueMobile.scrollWidth / 100;
+    prevVirtueMobile.onclick=()=>{
+        virtueProducts.scrollBy({left:-360,behavior: 'smooth'})
+    }
+    nextVirtueMobile.onclick=()=>{
+        virtueProducts.scrollBy({left:360,behavior: 'smooth'})
+    }
     prevVirtue.onclick=function showPrev(){
-        console.log("prev")
+        // console.log("prev")
         virtueProducts.scrollBy({left:730,behavior:"smooth"})
     }
     let nextVirtue= document.querySelector(".nextVirtue")
     nextVirtue.onclick=function showNext(){
-        console.log("next")
+        // console.log("next")
         virtueProducts.scrollBy({left:-730,behavior:"smooth"})
     }
     prevVirtue.onmouseover=()=>{
@@ -1024,9 +1184,9 @@ spec1.onclick=(e)=>{
     e.preventDefault()
     spec1.style.textDecoration="none"
     spec1.style.color="black"
-    markerSpec.style.width="7%"
+    // markerSpec.style.width="7%"
     markerSpec.style.display="flex"
-    markerSpec.style.left="38.5%"
+    markerSpec.style.left="0%"
     bestSellers.style.display="flex"
     newArrivals.style.display="none"
     giftSets.style.display="none"
@@ -1036,9 +1196,9 @@ spec2.onclick=(e)=>{
     e.preventDefault()
     spec2.style.textDecoration="none"
     spec2.style.color="black"
-    markerSpec.style.width="7%"
+    // markerSpec.style.width="7%"
     markerSpec.style.display="flex"
-    markerSpec.style.left="46.3%"
+    markerSpec.style.left="33%"
     bestSellers.style.display="none"
     newArrivals.style.display="flex"
     giftSets.style.display="none"
@@ -1048,9 +1208,9 @@ spec3.onclick=(e)=>{
     e.preventDefault()
     spec3.style.textDecoration="none"
     spec3.style.color="black"
-    markerSpec.style.width="8%"
+    // markerSpec.style.width="8%"
     markerSpec.style.display="flex"
-    markerSpec.style.left="54%"
+    markerSpec.style.left="70%"
     bestSellers.style.display="none"
     newArrivals.style.display="none"
     giftSets.style.display="flex"
@@ -1073,3 +1233,34 @@ spec3.onclick=(e)=>{
 // searchEnter.onclick=()=>{
 //     console.log(searchInput.value)
 // }
+
+
+let sponsoredLeftData=()=>{
+    // let elta=[]
+    return(leftData.innerHTML=totalProducts.map((x)=>{ 
+        if(x.title.split(" ")[0].toLowerCase() == "eltamd"){
+            let {id,image,hoverImage,title,reviews,price}=x
+            return`
+            <div class="sponsoredProduct" id="sponsored${id}">
+                <img class="sponsoredProductImg"  src="${image}" alt="">
+                <div class="sponsoredProductDesc">
+                    <p style="text-align: center;">${title}</p>
+                    <p style="font-weight: bold;">${reviews}</p>
+                    <p style="font-weight: bold;">${price}</p>
+                </div>
+            </div>
+            `
+        }
+        // console.log(x.title.split(" ")[0].toLowerCase() == e.target.value.toLowerCase())
+    }).join(""));
+    //     let z=x.title.split(" ")[0]
+    //     if((x.title.split(" ")[0].toString())==="ELTAMD"){
+    //         console.log("found")
+    //         elta.push(x)
+    //         return x;
+    //     }
+    //     else return;
+    // })
+    console.log(finding)
+}
+sponsoredLeftData()

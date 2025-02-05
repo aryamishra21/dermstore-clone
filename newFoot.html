@@ -1,12 +1,15 @@
-foot=document.querySelector(".foot")
-// let x=function footer(){
-//     console.log(body.innerHTML)
-//     return body.innerHTML
-// }
-// export default x
-let footData=()=>{
-    return(foot.innerHTML=`
-    <hr>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="footer.css">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+</head>
+<body>
+    <div class="foot"></div>
+    <!-- <hr>
     <div class="footer">
         <div class="footLeft">
             <div class="signingTop">
@@ -82,51 +85,6 @@ let footData=()=>{
                     <a>Accessibility</a>
                 </div>
             </div>
-            <div class="accountDetResponsive">
-            <div class="myAccountRes" style="border-bottom:1px solid gray; border-top:1px solid gray">
-                <div class="myAccountDrop" style="display: flex;align-items:center;justify-content: space-between;" onclick="showAccountFoot('hiddenAccountFoot','downzhiddenAccountFoot','upzhiddenAccountFoot')">
-                    <p>My Account</p>
-                    <div id="downzhiddenAccountFoot"><i class="bi bi-chevron-down"></i></div>
-                    <div id="upzhiddenAccountFoot" style="display: none;"><i class="bi bi-chevron-up"></i></div>
-                </div>
-                <div id="hiddenAccountFoot" style="display: none;flex-direction: column;gap: 1%;">
-                    <a>Manage My Auto-Replenishments</a>
-                    <a>My Rewards</a>
-                    <a>My Favorites</a>
-                    <a>Refer a Friend</a>
-                    <a>Order History</a>
-                </div>
-            </div>
-            <div class="companyRes" style="border-bottom:1px solid gray">
-                <div class="companyDrop" style="display: flex;align-items:center;justify-content: space-between;" onclick="showAccountFoot('hiddenCompanyFoot','downzhiddenCompanyFoot','upzhiddenCompanyFoot')">
-                    <p>Company</p>
-                    <div id="downzhiddenCompanyFoot"><i class="bi bi-chevron-down"></i></div>
-                    <div id="upzhiddenCompanyFoot" style="display: none;"><i class="bi bi-chevron-up"></i></div>
-                </div>
-                <div id="hiddenCompanyFoot" style="display: none;flex-direction: column;gap: 1%;">
-                    <a>Affiliate Program</a>
-                    <a>Key Workers Discount</a>
-                    <a>About Us</a>
-                    <a>Press</a>
-                    <a>What is Klarna?</a>
-                </div>
-            </div>
-            <div class="legalRes" style="border-bottom:1px solid gray">
-                <div class="legalDrop" style="display: flex;align-items:center;justify-content: space-between;" onclick="showAccountFoot('hiddenLegalFoot','downzhiddenLegalFoot','upzhiddenLegalFoot')">
-                    <p>Legal</p>
-                    <div id="downzhiddenLegalFoot"><i class="bi bi-chevron-down"></i></div>
-                    <div id="upzhiddenLegalFoot" style="display: none;"><i class="bi bi-chevron-up"></i></div>
-                </div>
-                <div id="hiddenLegalFoot" value="false" style="display: none;flex-direction: column;gap: 1%;">
-                    <a>Privacy Policy</a>
-                    <a>Site Wide Exclusions</a>
-                    <a>Terms & Conditions</a>
-                    <a>Modern Slavery Statement</a>
-                    <a>Product Recall</a>
-                    <a>Accessibility</a>
-                </div>
-            </div>
-        </div>
         </div>
     </div>
     <hr>
@@ -263,25 +221,88 @@ let footData=()=>{
     
             </ul>
         </div>
+    </div> -->
+    <!-- <hr>
+    <div class="responsiveFooter">
+        <div class="footLeft">
+            <div class="signingTop">
+                <p>Sign up to our newsletters and receive the latest exclusive discounts and deals</p>
+                <a href="register.html" class="registration" style="width: 40%;">SIGN ME UP</a>
+            </div>
+            <hr>
+            <div class="customer">
+                <p>Customer Service</p>
+                <div class="customerService">
+                  <div class="customerServiceDet">
+                    <i class="bi bi-info-circle-fill"></i>
+                    <a>Help Center / FAQs</a>
+                  </div>
+                  <div class="customerServiceDet">
+                    <i class="bi bi-arrow-repeat"></i>
+                    <a>Returns</a>
+                  </div>
+                  <div class="customerServiceDet">
+                    <i class="bi bi-truck"></i>
+                    <a>Shipping Information</a>
+                  </div>
+                  <div class="customerServiceDet">
+                    <i class="bi bi-crosshair"></i>
+                    <a>Track my order</a>
+                  </div>
+                  <div class="customerServiceDet">
+                    <i class="bi bi-cookie"></i>
+                    <a>Cookie Settings</a>
+                  </div>
+                </div>
+            </div>
+        </div>
     </div>
-    `)
-}
-footData()
-
-let showAccountFoot=(showValue,upz,downz)=>{
-    let down=document.getElementById(downz)
-    let up=document.getElementById(upz)
-    let val=document.getElementById(showValue)
-    if(val.style.display==="none"){
-        val.style.display="flex"
-        // chevron.classList=="bi-chevron-up"
-        up.style.display="none"
-        down.style.display="block"
-    }
-    else{
-        val.style.display="none"
-        // chevron.classList=="bi-chevron-down"
-        down.style.display="none"
-        up.style.display="block"
-    }
-}
+    <div class="accountDetResponsive">
+        <div class="myAccountRes">
+            <hr>
+            <div class="myAccountDrop" style="display: flex;align-items:center;justify-content: space-between;border: 1px solid red;" onclick="showAccountFoot('hiddenAccountFoot')">
+                <p>My Account</p>
+                <i class="bi bi-chevron-down"></i>
+            </div>
+            <div id="hiddenAccountFoot" style="display: none;flex-direction: column;gap: 1%;">
+                <a>Manage My Auto-Replenishments</a>
+                <a>My Rewards</a>
+                <a>My Favorites</a>
+                <a>Refer a Friend</a>
+                <a>Order History</a>
+            </div>
+            <hr>
+        </div>
+        <div class="companyRes">
+            <div class="companyDrop" style="display: flex;align-items:center;justify-content: space-between;border: 1px solid red;" onclick="showAccountFoot('hiddenCompanyFoot')">
+                <p>Company</p>
+                <i class="bi bi-chevron-down"></i>
+            </div>
+            <div id="hiddenCompanyFoot" value="false" style="display: flex;flex-direction: column;gap: 1%;">
+                <a>Affiliate Program</a>
+                <a>Key Workers Discount</a>
+                <a>About Us</a>
+                <a>Press</a>
+                <a>What is Klarna?</a>
+            </div>
+            <hr>
+        </div>
+        <div class="legalRes">
+            <div class="legalDrop" style="display: flex;align-items:center;justify-content: space-between;border: 1px solid red;" onclick="showAccountFoot('hiddenLegalFoot')">
+                <p>Legal</p>
+                <i class="bi bi-chevron-down"></i>
+            </div>
+            <div id="hiddenLegalFoot" value="false" style="display: flex;flex-direction: column;gap: 1%;">
+                <a>Privacy Policy</a>
+                <a>Site Wide Exclusions</a>
+                <a>Terms & Conditions</a>
+                <a>Modern Slavery Statement</a>
+                <a>Product Recall</a>
+                <a>Accessibility</a>
+            </div>
+            <hr>
+        </div>
+    </div> -->
+    <script src="footer.js"></script>
+</body>
+</html>

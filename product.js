@@ -174,7 +174,7 @@ sponsored1.onclick=()=>{
     console.log(window.location.href)
     totalProducts.map((val=>{
         if(sponsoredProductName1.innerHTML==val.title){
-            window.location.href=`http://127.0.0.1:5500/product.html?${val.id}`
+            window.location.href=`/product.html?${val.id}`
             productData()
         }
     }))
@@ -184,7 +184,7 @@ sponsored2.onclick=()=>{
     totalProducts.map((val=>{
         if(sponsoredProductName2.innerHTML==val.title){
             // console.log(window.location.href.split("?")[1]=val.id)
-            window.location.href=`http://127.0.0.1:5500/product.html?${val.id}`
+            window.location.href=`/product.html?${val.id}`
             productData()
         }
     }))

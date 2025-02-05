@@ -49,8 +49,8 @@ let  Header=() =>{
                             <a href="" class="login">LOGIN</a>
                             <a href="/register.html" class="register">REGISTER</a>
                         </div>
-                        <div class="loggedHidden" style="display:flex;flex-direction:row; justify-content:space-between">
-                            <p style="color:black">Hello <span class="usernameVal">Name</span><p>
+                        <div class="loggedHidden" style="display:none;flex-direction:row; justify-content:space-between">
+                            <p style="color:black;">Hello <span class="usernameVal">Name</span><p>
                             <a href="login.html" style="color:black">LOG OUT</a>
                         </div>
                         <div class="secondHidden">
@@ -61,13 +61,13 @@ let  Header=() =>{
                         </div>
                     </div>
                 </div>
-                <div class="cart" onmouseout=hidecartPopup() style="position: relative;">
+                <div class="cart" onmouseout="hidecartPopup()" style="position: relative;">
                     <div class="cartIcon">
                     <i class="bi bi-bag"></i>
                     <a id="a" href="">Cart</a>
                     <span id="noInCart" onchange="popUpBasketData()" style="position: absolute; top:1%;left:20%;border-radius:50%;color:white;background-color: black; padding: 5% 10%; font-size: 70%;">0</span>
                     </div>
-                    <div class="popUpCart" style="display:none;position:absolute;top:90%;left:-350%;margin-right:0%; width:300px;  background-color:white">
+                    <div class="popUpCart" style="display:none;position:absolute;top:90%;left:-306%;margin-right:0%; width:300px;  background-color:white">
                     <div class="" style="display:flex; flex-direction:row;justify-content:space-between;padding:5% 2% 0% 2%">
                         <p><span class="noOfCart">1</span> item(s) in your cart.</p>
                         <p class="totalAmountOfCart">$1123</p>
@@ -1370,13 +1370,544 @@ let  Header=() =>{
                 </ul>
             </div>
         </div>
-    `)
+
+
+
+        <div class="responsiveHeader" style="position: relative; ">
+        <div class="innerSearchBar">
+        <input type="text" name="" id="searchInputRes">
+        <a href="" id="searchEnterRes"><i class="bi bi-search"></i></a>
+        </div>
+        <div class="headerTopLeft">
+            <button class="sideBar"><i class="bi bi-list"></i></button>
+            <button class="searchBarLeft">
+            <i class="bi bi-search" id="resOpenSearch" onclick="showInnerSearch('resOpenSearch')"></i>
+            <i class="bi bi-x-lg" id="resCloseSearch" onclick="showInnerSearch('resCloseSearch')" style="display: none;"></i>
+            </button>
+            <div class="resMenu">
+                <div class="resMenuContent">
+                    <div class="hiddenMenuHead">
+                        <button class="homePageRes">
+                            <i class="bi bi-house-door-fill" id="homeIcon"></i>
+                        </button>
+                        <button class="hiddenMenuClose"><i class="bi bi-x-lg"></i></button>
+                    </div>
+                    <ul class="resMenuDetails">
+
+                        <!--            Skin Care                  -->
+                        <li class="items">
+                            <div class="submenu-item">
+                                <a class="itemData"> 
+                                    <p>Skin Care</p>
+                                    <i class="bi bi-chevron-right"></i>
+                                </a>
+                            </div>
+                            <ul class="resSubMenu">
+                                <div class="submenuCloseBack">
+                                    <div class="backIcon" style="gap:4%;">
+                                        <i class="bi bi-chevron-left"></i>
+                                        <p>Back</p>
+                                    </div>
+                                    <button class="hiddenMenuClose"><i class="bi bi-x-lg"></i></button>
+                                </div>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Skin Care | Home</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Shop Cleansers & Exfoliators</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Shop Treatments & Serums</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Shop Moisturizers</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Shop Eye Care</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Shop Lip Care</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Shop Professional Tools & Devices</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Build a Routine</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Popular Brands</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="items">
+                            <a href="">Brands</a>
+                        </li>
+
+                        <li class="items">
+                            <a href="">Bestsellers</a>
+                        </li>
+
+                        <li class="items">
+                            <a class="itemData"> 
+                                <p>Browse By</p>
+                            </a>
+                        </li>
+                        <!--            SALE               -->
+                        <li class="items">
+                            <div class="submenu-item">
+                                <a class="itemData"> 
+                                    <p>Sale</p>
+                                    <i class="bi bi-chevron-right"></i>
+                                </a>
+                            </div>
+                            <ul class="resSubMenu">
+                                <div class="submenuCloseBack">
+                                    <div class="backIcon" style="gap:4%;">
+                                        <i class="bi bi-chevron-left"></i>
+                                        <p>Back</p>
+                                    </div>
+                                    <button class="hiddenMenuClose"><i class="bi bi-x-lg"></i></button>
+                                </div>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>jane iredale Sale: 20% off</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Last Chance Sale</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Shop By % Off</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Other Offers</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--            beautyFIX                  -->
+                        <li class="items">
+                            <div class="submenu-item">
+                                <a class="itemData"> 
+                                    <p>BeautyFIX</p>
+                                    <i class="bi bi-chevron-right"></i>
+                                </a>
+                            </div>
+                            <ul class="resSubMenu">
+                                <div class="submenuCloseBack">
+                                    <div class="backIcon" style="gap:4%;">
+                                        <i class="bi bi-chevron-left"></i>
+                                        <p>Back</p>
+                                    </div>
+                                    <button class="hiddenMenuClose"><i class="bi bi-x-lg"></i></button>
+                                </div>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>BeautyFIX | Home</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>BeautyFIX Sale</p>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Best Of DermStore</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="items">
+                            <div class="submenu-item">
+                                <a class="itemData"> 
+                                    <p>Hair Care</p>
+                                    <i class="bi bi-chevron-right"></i>
+                                </a>
+                            </div>
+                            <ul class="resSubMenu">
+                                <div class="submenuCloseBack">
+                                    <div class="backIcon" style="gap:4%;">
+                                        <i class="bi bi-chevron-left"></i>
+                                        <p>Back</p>
+                                    </div>
+                                    <button class="hiddenMenuClose"><i class="bi bi-x-lg"></i></button>
+                                </div>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Hair Care | Home</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Shop by Category</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Shop by Hair Type</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Shop by Hair Tools</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>More</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Popular Brands</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="items">
+                            <div class="submenu-item">
+                                <a class="itemData"> 
+                                    <p>Makeup</p>
+                                    <i class="bi bi-chevron-right"></i>
+                                </a>
+                            </div>
+                            <ul class="resSubMenu">
+                                <div class="submenuCloseBack">
+                                    <div class="backIcon" style="gap:4%;">
+                                        <i class="bi bi-chevron-left"></i>
+                                        <p>Back</p>
+                                    </div>
+                                    <button class="hiddenMenuClose"><i class="bi bi-x-lg"></i></button>
+                                </div>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Makeup | Home</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Face</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Lips</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Eyes</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>More</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Popular Brands</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="items">
+                            <div class="submenu-item">
+                                <a class="itemData"> 
+                                    <p>Tools & Devices</p>
+                                    <i class="bi bi-chevron-right"></i>
+                                </a>
+                            </div>
+                            <ul class="resSubMenu">
+                                <div class="submenuCloseBack">
+                                    <div class="backIcon" style="gap:4%;">
+                                        <i class="bi bi-chevron-left"></i>
+                                        <p>Back</p>
+                                    </div>
+                                    <button class="hiddenMenuClose"><i class="bi bi-x-lg"></i></button>
+                                </div>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Tools & Devices | Home</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Shop by Category</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Popular Brands</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="items">
+                            <div class="submenu-item">
+                                <a class="itemData"> 
+                                    <p>SPF</p>
+                                    <i class="bi bi-chevron-right"></i>
+                                </a>
+                            </div>
+                            <ul class="resSubMenu">
+                                <div class="submenuCloseBack">
+                                    <div class="backIcon" style="gap:4%;">
+                                        <i class="bi bi-chevron-left"></i>
+                                        <p>Back</p>
+                                    </div>
+                                    <button class="hiddenMenuClose"><i class="bi bi-x-lg"></i></button>
+                                </div>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>SPF | Home</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Shop by Type</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Shop by Category</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Shop by Protection</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Shop by Skin Type</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Shop by Brand</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="items">
+                            <div class="submenu-item">
+                                <a class="itemData"> 
+                                    <p>Bath & Body</p>
+                                    <i class="bi bi-chevron-right"></i>
+                                </a>
+                            </div>
+                            <ul class="resSubMenu">
+                                <div class="submenuCloseBack">
+                                    <div class="backIcon" style="gap:4%;">
+                                        <i class="bi bi-chevron-left"></i>
+                                        <p>Back</p>
+                                    </div>
+                                    <button class="hiddenMenuClose"><i class="bi bi-x-lg"></i></button>
+                                </div>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Bath & Body | Home</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Shop by Category</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Shop by Concern</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Personal Care</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>More</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Popular Brands</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="items">
+                            <div class="submenu-item">
+                                <a class="itemData"> 
+                                    <p>Fragrance</p>
+                                    <i class="bi bi-chevron-right"></i>
+                                </a>
+                            </div>
+                            <ul class="resSubMenu">
+                                <div class="submenuCloseBack">
+                                    <div class="backIcon" style="gap:4%;">
+                                        <i class="bi bi-chevron-left"></i>
+                                        <p>Back</p>
+                                    </div>
+                                    <button class="hiddenMenuClose"><i class="bi bi-x-lg"></i></button>
+                                </div>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Fragrance | Home</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Shop by Category</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Fragrance Family</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                                <li class="items">
+                                    <a class="itemData"> 
+                                        <p>Popular Brands</p>
+                                        <i class="bi bi-chevron-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="items">
+                            <a class="itemData"> 
+                                <p>Skin 101</p>
+                                <i class="bi bi-chevron-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <a href="index.html" class="hiddenLogoDiv">
+            <img class="hiddenLogo" src="https://worldbranddesign.com/wp-content/uploads/2020/05/2Dermstore-world-brand-design.jpg" alt="">
+        </a>
+        <div class="headerTopRight">
+            <div class="account">
+                <i class="bi bi-person"></i>
+                <div class="accountHidden">
+                    <div class="firstHidden">
+                        <a href="" class="login">LOGIN</a>
+                        <a href="/register.html" class="register">REGISTER</a>
+                    </div>
+                    <div class="loggedHidden" style="display:none;flex-direction:row; justify-content:space-between">
+                        <p style="color:black;">Hello <span class="usernameVal">Name</span><p>
+                        <a href="login.html" style="color:black">LOG OUT</a>
+                    </div>
+                    <div class="secondHidden">
+                        <a href="favourites.html" class="myFav">My Favorites</a>
+                        <a href="">Your Orders</a>
+                        <a href="">Your Auto Auto-Replenishments</a>
+                        <a href="">Your Referrals</a>
+                    </div>
+                </div>
+            </div>
+            <div class="cart" onmouseout="hidecartPopup()" style="position: relative;">
+                <div class="cartIcon">
+                    <i class="bi bi-bag"></i>
+                    <span id="noInCart" onchange="popUpBasketData()" style="position: absolute; top:5%;left:70%;border-radius:50%;color:white;background-color: black; padding: 5% 13%; font-size: 80%;">0</span>
+                </div>
+                <div class="popUpCart" style="display:none;position:absolute;top:90%;left:-306%;margin-right:0%; width:300px;  background-color:white">
+                <div class="" style="display:flex; flex-direction:row;justify-content:space-between;padding:5% 2% 0% 2%">
+                    <p><span class="noOfCart">1</span> item(s) in your cart.</p>
+                    <p class="totalAmountOfCart">$1123</p>
+                </div>
+                <div class="loyaltyPoints" style="display:flex;padding:1% 2%">
+                <svg class="loyaltyPointsMessage_starIcon" xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24">
+                    <path class="loyaltyPointsMessage_starIconFill" fill-rule="evenodd" fill="#333" d="M842 717c.376 3.574 1.577 6.374 3.604 8.4 2.027 2.027 4.825 3.227 8.396 3.6-3.522.302-6.32 1.495-8.396 3.58-2.075 2.084-3.258 4.89-3.55 8.42-.506-3.762-1.688-6.569-3.548-8.42-1.86-1.852-4.695-3.045-8.506-3.58 3.712-.441 6.547-1.64 8.506-3.6 1.958-1.958 3.123-4.758 3.494-8.4z" transform="translate(-830 -717)"></path>
+                </svg>
+                <p style="padding:2% 4% 4% 4% ; font-weight:bold">Earn 1500 reward points when purchasing this product as a rewards member*</p>
+                </div>
+                <a href="cart.html" style="background-color:black;color:white;text-decoration:none;width:100%;padding:2% 5%;margin-left:2%;">VIEW CART</a>
+                <div class="basketData" style="overflow-y: scroll;height:65vh;margin-top:25px;"></div>
+                </div>
+            </div>    
+        </div>
+    </div>
+        `)
 }
 Header()
 
+// let respHeader=()=>{
+
+// }
 
 
-// console.log(loginStatus)
 
 let firstHidden=document.querySelector(".firstHidden")
 let loggedHidden=document.querySelector(".loggedHidden")
@@ -1393,51 +1924,92 @@ let usernameVal=document.querySelector(".usernameVal")
 // }
 
 let logo=document.querySelector(".logo")
-logo.onclick=()=>{window.location.href=`http://127.0.0.1:5500/index.html`}
+if(logo){
+    logo.onclick=()=>{window.location.href='index.html'}
+}
 
 let cart=document.querySelector(".cart")
 let cartIcon=document.querySelector(".cartIcon")
 cartIcon.onclick=()=>{
-    window.location.href=`http://127.0.0.1:5500/cart.html`
+    window.location.href=`cart.html`
 }
 let popUpCart=document.querySelector(".popUpCart") 
 // let images=document.getElementsByTagName("img") 
 hidecartPopup=()=>{
-    console.log("out")
-    popUpCart.style.display="none"
-    body.style.backgroundColor="white"
+    popUpCart.style.display="none";
+    body.style.backgroundColor="white";
+    header.style.backgroundColor="white"
+    input.style.backgroundColor="white"
+    cart.style.backgroundColor="white"
+    account.style.backgroundColor="white"
 }
 cart.onmouseover=()=>{
     cart.style.cursor="pointer"
-    console.log("block")
     popUpCart.style.display="block"
-    // heading.style.backgroundColor="gray"
     body.style.backgroundColor="gray";
+    header.style.backgroundColor="gray"
+    input.style.backgroundColor="gray"
+    cart.style.backgroundColor="white"
+    account.style.backgroundColor="gray"
     // images.style.filter="grayscale(100%)";
 }
 
 let searchInput=document.getElementById("searchInput")
-searchEnter.onclick=(e)=>{
+// if(searchEnter){
+let searchEnter=document.getElementById('searchEnter') 
+searchEnter.addEventListener("click",
+        function searchEnterFunc(e){
+            console.log("ndind")
+        e.preventDefault()
+        let findingSearch=totalProducts.find((x)=>{
+        if(x.title==searchInput.value){
+            window.location.href=`random.html?${x.id}`
+        }})
+        }
+)
+let searchEnterRes=document.getElementById("searchEnterRes")
+searchEnterRes.addEventListener("click",
+// searchEnterRes.onclick=
+(e)=>{
     e.preventDefault()
     let findingSearch=totalProducts.find((x)=>{
-    if(x.title==searchInput.value){
-        window.location.href=`http://127.0.0.1:5500/random.html?${x.id}`
-    }})
+        if(x.title==searchEnterRes.value){
+            window.location.href=`random.html?${x.id}`
+        }})
 }
+)
+// }
 // searchInput.addEventListener("keypress",)
+let searchInputRes=document.getElementById("searchInputRes")
+if(searchInputRes){
+    searchInputRes.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+        //   console.log('Enter key pressed!');
+          let findingSearch=totalProducts.find((x)=>{
+            if(x.title==searchInputRes.value){
+                window.location.href=`random.html?${x.id}`
+            }})
+        }
+      }); 
+}
+
+if(searchInput){
 searchInput.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
     //   console.log('Enter key pressed!');
       let findingSearch=totalProducts.find((x)=>{
         if(x.title==searchInput.value){
-            window.location.href=`http://127.0.0.1:5500/random.html?${x.id}`
+            window.location.href=`random.html?${x.id}`
         }})
     }
   });
-
+}
 function showSpecificMenu(hiddenCategoryId){
     let hiddenCategory=document.getElementById(hiddenCategoryId)
     hiddenCategory.style.display="grid"
+    hiddenCategory.style.width="90%"
+    hiddenCategory.style.margin="0 5%"
+
     }
     function hideSpecificMenu(hiddenCategoryId){
     let hiddenCategory=document.getElementById(hiddenCategoryId)
@@ -1476,12 +2048,14 @@ if(account){
         body.style.backgroundColor="gray";
         header.style.backgroundColor="gray"
         input.style.backgroundColor="gray"
+        cart.style.backgroundColor="gray";
     })
     account.addEventListener("mouseout",()=>{
         // hiddenAccount.style.display = "none";
         body.style.backgroundColor="white";
         header.style.backgroundColor="white"
         input.style.backgroundColor="white"
+        cart.style.backgroundColor="white"
     })
 }
 
@@ -1513,7 +2087,7 @@ popUpBasketData()
 let openPr=(id)=>{
     totalProducts.find((x)=>{
         if(x.id==id){
-            window.location.href=`http://127.0.0.1:5500/random.html?${x.id}`
+            window.location.href=`random.html?${x.id}`
         }
     })
 }
@@ -1525,3 +2099,105 @@ let calculation=()=>{
     noOfCart.innerHTML=basket.map((x)=>x.quantity).reduce((x,y)=>x+y,0)
 }
 calculation()
+
+
+let homeIcon=document.getElementById('homeIcon')
+let backIcon=document.getElementById('backIcon')
+let hiddenMenuResponsive=document.querySelector(".hiddenMenuResponsive")
+let skinCareHeadRes=document.querySelector("#skinCareHeadRes")
+let homePageRes=document.querySelector(".homePageRes")
+let originalHiddenMenuData=document.querySelector(".originalHiddenMenuData")
+let showRes=(menuValueId)=>{
+    // skinCareHeadRes.style.display="flex"
+    let menuValue=document.getElementById(menuValueId)
+    hiddenMenuResponsive.innerHTML=menuValue.innerHTML
+    backIcon.style.display="flex"
+    homeIcon.style.display="none"
+    // homePageRes.innerHTML=`
+    // <div style="display: flex;gap:2%;" onclick="backHome()">
+    //                     <i class="bi bi-chevron-left"></i>
+    //                     <p>Back</p>
+    //                 </div>`
+    // console.log(menuValue)
+    // let childs=menuValue.childNodes
+    // let childDivs=Array.from(childs).filter(child=>child.tagName==="DIV");
+    // for(i=0;i<childDivs.length;i++){
+    //     childDivs[i].style.display="flex"
+    //     childDivs[i].style.flexDirection="column"
+    //     console.log(childDivs[i])
+    // }
+    // childs.style.display="flex"
+    // childs.style.flexDirection="column"
+}
+function goIndex(){
+    window.location.href='index.html'
+}
+// function backHome(){
+//     homeIcon.style.display="flex"
+//     backIcon.style.display="none"
+//     hiddenMenuResponsive.innerHTML=originalHiddenMenuData.innerHTML
+    // let menuchilds=hiddenMenuResponsive.childNodes
+    // menuchilds.style.display="flex"
+    // menuchilds.style.justifyContent="space-between"
+// }
+
+let menuItems=document.querySelectorAll(".submenu-item");
+let menu=document.querySelector(".resMenuContent");
+let backIconAll=document.querySelectorAll(".resSubMenu .submenuCloseBack .backIcon");
+// console.log(backIconAll)
+// console.log(menuItems)
+menuItems.forEach((item,index)=>{
+    item.addEventListener("click",()=>{
+        // console.log(item)
+        item.classList.add("show-submenu");
+        menu.classList.add("submenu-active")
+        menuItems.forEach((item2,index2)=>{
+            if(index!==index2){
+                item2.classList.remove("show-submenu")
+            }
+        })
+    })
+})
+backIconAll.forEach((title)=>{
+    title.addEventListener("click",()=>{
+
+        // console.log(menu.classList,title)
+        menu.classList.remove("submenu-active");
+    })
+})
+let resMenu=document.querySelector(".resMenu")
+let hiddenMenuClose=document.querySelectorAll(".hiddenMenuClose")
+hiddenMenuClose.forEach((closeBtn)=>{
+    closeBtn.addEventListener("click",()=>{
+            resMenu.style.display="none"
+        })
+    })
+let sideBar=document.querySelector(".sideBar")
+sideBar.addEventListener("click",()=>resMenu.style.display="flex")
+
+
+let innerSearchBar=document.querySelector(".innerSearchBar")
+let resOpenSearch=document.getElementById("resOpenSearch")
+let resCloseSearch=document.getElementById("resCloseSearch")
+let showInnerSearch=(showHideInnerId)=>{
+    let showHideInner=document.getElementById(showHideInnerId)
+    // showHideInner.style.display="none"
+    if(showHideInner==resOpenSearch)
+    {
+        resOpenSearch.style.display="none"
+        resCloseSearch.style.display="block"
+        innerSearchBar.style.display="flex"
+        heading.style.backgroundColor="gray"
+    }
+    else{
+        resOpenSearch.style.display="block"
+        innerSearchBar.style.display="none"
+        resCloseSearch.style.display="none"
+        heading.style.backgroundColor="none"
+    }
+}
+innerSearchBar.addEventListener('blur',()=>{
+    resOpenSearch.style.display="block"
+    innerSearchBar.style.display="none"
+    resCloseSearch.style.display="none"
+})

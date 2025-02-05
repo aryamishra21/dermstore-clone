@@ -35,7 +35,7 @@ let openProduct=(id)=>{
     // console.log(id)
     let openPr=favourites.find((x)=>x.id==id)
     console.log(openPr)
-    window.location.href=`http://127.0.0.1:5500/random.html?${id}`
+    window.location.href=`/random.html?${id}`
 }
 
 let removePr=(id)=>{

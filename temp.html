@@ -1,0 +1,217 @@
+<div class="hiddenMenu">
+    <div class="hiddenMenuHead">
+        <button class="homePageRes">
+            <i class="bi bi-house-door-fill" id="homeIcon" onclick="goIndex()"></i>
+            <div id="backIcon" style="gap:2%;" onclick="backHome()">
+                <i class="bi bi-chevron-left"></i>
+                <p>Back</p>
+            </div>
+        </button>
+        <button class="hiddenMenuClose"><i class="bi bi-x-lg"></i></button>
+    </div>
+
+    <div class="hiddenMenuResponsive">
+        <div class="originalHiddenMenuData">
+            <div class="skinCareRes resDivs" onclick="showRes('skinCareHeadRes')"> 
+                <p>Skin Care</p>
+                <i class="bi bi-chevron-right"></i>
+            </div>
+            <p class="brandsRes">Brands</p>
+            <p class="bestsellersRes">Bestsellers</p>
+            <div class="browseByRes resDivs" onclick="showRes('skinCareHeadRes')"> 
+                <p>Browse By</p>
+                <i class="bi bi-chevron-right"></i>
+            </div>
+            <div class="saleRes resDivs" onclick="showRes('saleValRes')"> 
+                <p>Sale</p>
+                <i class="bi bi-chevron-right"></i>
+            </div>
+            <div class="beautyRes resDivs" onclick="showRes('skinCareHeadRes')"> 
+                <p>BeautyFIX</p>
+                <i class="bi bi-chevron-right"></i>
+            </div>
+            <div class="hairCareRes resDivs" onclick="showRes('skinCareHeadRes')"> 
+                <p>Hair Care</p>
+                <i class="bi bi-chevron-right"></i>
+            </div>
+            <div class="makeupRes resDivs" onclick="showRes('skinCareHeadRes')"> 
+                <p>Makeup</p>
+                <i class="bi bi-chevron-right"></i>
+            </div>
+            <div class="toolsRes resDivs" onclick="showRes('skinCareHeadRes')"> 
+                <p>Tools & Devices</p>
+                <i class="bi bi-chevron-right"></i>
+            </div>
+            <div class="spfRes resDivs"> 
+                <p>SPF</p>
+                <i class="bi bi-chevron-right"></i>
+            </div>
+            <div class="bathBodyRes resDivs"> 
+                <p>Bath & Body</p>
+                <i class="bi bi-chevron-right"></i>
+            </div>
+            <div class="fragranceRes resDivs"> 
+                <p>Fragrance</p>
+                <i class="bi bi-chevron-right"></i>
+            </div>
+            <div class="skin101Res resDivs"> 
+                <p>Skin 101</p>
+                <i class="bi bi-chevron-right"></i>
+            </div>
+        </div>
+        
+
+        let searchResInput=document.getElementById("searchResInput")
+        function searchEnterResFunc(e){
+            e.preventDefault()
+            let findingSearch=totalProducts.find((x)=>{
+            if(x.title==searchResInput.value){
+                window.location.href=`random.html?${x.id}`
+            }})
+            }        
+<!-----------------------------------------------Skin Inner data      ---------------------------------->
+
+    <div id="skinCareHeadRes" style="display: none;">
+        <div class="skinCareHeadResDiv">
+            <p>Shop Cleansers & Exfoliators</p>
+            <i class="bi bi-chevron-right"></i>
+        </div>
+        <div class="skinCareHeadResDiv">
+            <p>Shop Treatments & Serums</p>
+            <i class="bi bi-chevron-right"></i>
+        </div>
+        <div class="skinCareHeadResDiv">
+            <p>Shop Moisturizers</p>
+            <i class="bi bi-chevron-right"></i>
+        </div>
+        <div class="skinCareHeadResDiv">
+            <p>Shop Eye Care</p>
+            <i class="bi bi-chevron-right"></i>
+        </div>                        
+        <div class="skinCareHeadResDiv">
+            <p>Shop Lip Care</p>
+            <i class="bi bi-chevron-right"></i>
+        </div>                        
+        <div class="skinCareHeadResDiv">
+            <p>Shop Professional Tools & Devices</p>
+            <i class="bi bi-chevron-right"></i>
+        </div>                        
+        <div class="skinCareHeadResDiv">
+            <p>Build a Routine</p>
+            <i class="bi bi-chevron-right"></i>
+        </div>                        
+        <div class="skinCareHeadResDiv">
+            <p>Popular Brands</p>
+            <i class="bi bi-chevron-right"></i>
+        </div>
+    </div>
+
+<!-----------------------------------------------Skin Inner*2 data      ---------------------------------->
+
+
+    <ul class="skin2Ul cleansersUl" style="display: none;flex-direction: column;list-style-type: none;">
+        <li>Cleansers</li>
+        <li>Exfoliants, Peels & Scrubs</li>
+        <li>Toners & Mist</li>
+        <li>Face Wash</li>
+        <li>Makeup Remover</li>
+    </ul>
+    <ul class=" skin2Ul treatmentUl">
+        <li>Face Serums</li>
+        <li>Face Masks</li>
+        <li>Neck Cream</li>
+        <li>Wrinkle Cream</li>
+        <li>Acne Treatment</li>
+        <li>Dark Spot Corrector</li>
+    </ul>
+    <ul class=" skin2Ul shopMoisturizerUl">
+        <li>Face Moisturizer</li>
+        <li>Face Oils</li>
+        <li>Night Cream</li>
+        <li>Tinted Moisturizer</li>
+        <li>Essences</li>
+        <li>Men's Moisturizers & Treatments</li>
+    </ul>
+    <ul class="skin2Ul shopEyeUl">
+        <li>Eye Cream & Moisturizers</li>
+        <li>Eye Treatments & Serums</li>
+        <li>Eye Masks</li>
+    </ul>
+    <ul class="skin2Ul shopLipUl">
+        <li>Lip Balms & Treatments</li>
+    </ul>
+    <ul class="skin2Ul shopToolsUl">
+        <li>Cleansing Devices</li>
+        <li>Anti-Aging Tools & Devices</li>
+        <li>Microdermabrasion</li>
+        <li>Microneedling</li>
+        <li>Essences</li>
+        <li>Men's Moisturizers & Treatments</li>
+    </ul>
+    <ul class="skin2Ul buildRoutineUl">
+        <li>Combination Skin</li>
+        <li>Dry Skin</li>
+        <li>Normal Skin</li>
+        <li>Oily Skin</li>
+        <li>Sensitive Skin</li>
+    </ul>
+    <ul class="skin2Ul moreUl">
+        <li>New Arrivals</li>
+        <li>Bestsellers</li>
+        <li>Sun Care</li>
+        <li>Natural Skin Care</li>
+        <li>Kits & Sets</li>
+        <li>Travel Size</li>
+        <li>Sale</li>
+        <li>View All...</li>
+    </ul>
+    <!-- beautyFix -->
+    <ul class="skin2Ul BeautyFIXUl">
+        <li>BeautyFIX Sale</li>
+        <li>Best Of DermStore</li>
+    </ul>
+
+    <!-- sale -->
+    <div class="sale2Ul" id="saleValRes">
+        <p>jane iredale Sale: 20% off</p>
+        <div class="skinCareHeadResDiv">
+            <p>Last Chance Sale</p>
+            <i class="bi bi-chevron-right"></i>
+        </div>
+        <div class="skinCareHeadResDiv">
+            <p>Shop By % Off</p>
+            <i class="bi bi-chevron-right"></i>
+        </div>
+        <div class="skinCareHeadResDiv">
+            <p>Other Offers</p>
+            <i class="bi bi-chevron-right"></i>
+        </div>
+    </div>
+<!-- ----------------------------------------           sale Inner ------------------------------------------>
+    <ul class="lastChanceInnerUl">
+        <li>Skin Care Sale</li>
+        <li>Hair Care Sale</li>
+        <li>Makeup Sale</li>
+        <li>Bath & Body Sale</li>
+        <li>Tools & Devices Sale</li>
+        <li>Value Sets Sale</li>
+        <li>SPF Sale</li>
+    </ul>
+    <ul class="percentageInnerUl">
+        <li>Save 10%</li>
+        <li>Save 15%</li>
+        <li>Save 20%</li>
+        <li>Save 25%</li>
+        <li>Save 30%</li>
+        <li>Save 35%</li>
+        <li>Save 40%</li>
+    </ul>
+    <ul class="otherOffersInnerUl">
+        <li>Save with Auto-Replenishment</li>
+        <li>Refer a Friend, Get $15</li>
+        <li>Best of Dermstore</li>
+        <li>Value Sets</li>
+    </ul>
+
+    </div>
+</div>

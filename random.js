@@ -1,9 +1,9 @@
 let main =document.querySelector(".productContainer")
 // let basket=JSON.parse(localStorage.getItem("data")) || []
-let calculation=()=>{
-    let cartAmount=document.getElementById("noInCart");
-    cartAmount.innerHTML=basket.map((x)=>x.quantity).reduce((x,y)=>x+y,0)
-}
+// let calculation=()=>{
+//     let cartAmount=document.getElementById("noInCart");
+//     cartAmount.innerHTML=basket.map((x)=>x.quantity).reduce((x,y)=>x+y,0)
+// }
 calculation()
 
 let generateProduct=()=>{
@@ -680,7 +680,7 @@ if(sponsored1){
     console.log(window.location.href)
     totalProducts.map((val=>{
         if(sponsoredProductName1.innerHTML==val.title){
-            window.location.href=`http://127.0.0.1:5500/random.html?${val.id}`
+            window.location.href=`/random.html?${val.id}`
             generateProduct()
         }
     }))
@@ -689,7 +689,7 @@ if(sponsored2){
 sponsored2.onclick=()=>{
     totalProducts.map((val=>{
         if(sponsoredProductName2.innerHTML==val.title){
-            window.location.href=`http://127.0.0.1:5500/random.html?${val.id}`
+            window.location.href=`/random.html?${val.id}`
             generateProduct()
         }
     }))
